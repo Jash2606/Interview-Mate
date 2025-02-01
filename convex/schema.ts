@@ -6,7 +6,7 @@ export default defineSchema({
         name: v.string(),
         email: v.string(),
         image: v.optional(v.string()),
-        role : v.union(v.literal("admin"), v.literal("user")),
+        role : v.union(v.literal("admin"), v.literal("candidate")),
         clerkId : v.string(),
     }).index("by_clerkId", ["clerkId"]),
 });
