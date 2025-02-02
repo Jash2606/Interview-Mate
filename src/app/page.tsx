@@ -5,12 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="m-10">
-      <SignInButton>
-        <Button>
-          <p>Ander Jao</p>
-        </Button>
-      </SignInButton>
-      
+      <h1> Home Page </h1>
     </div>
   );
 }
