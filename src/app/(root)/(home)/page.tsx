@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
+import LoaderUI from "@/components/LoaderUI";
 
 export default function Home() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function Home() {
   }
 
   if(isLoading) {
-    return <p>Loading...</p>
+    return <LoaderUI />
   }
 
   return (
