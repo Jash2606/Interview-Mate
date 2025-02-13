@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/Theme-provider"; 
+import { ThemeProvider } from "@/components/providers/Theme-provider"; 
 import Navbar from "@/components/Navbar";
 import ConvexClerkProvider from "@/components/providers/ConvexClerkProvider";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
