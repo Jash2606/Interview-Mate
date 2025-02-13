@@ -3,6 +3,7 @@
 import ActionCard from "../../../components/ActionCard";
 import { QUICK_ACTIONS } from "@/constants";
 import  useUserRole  from "../../../components/hooks/useUserRole";
+import  MeetingModal  from "../../../components/MeetingModal";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
@@ -61,6 +62,12 @@ export default function Home() {
 
             ))}
           </div>
+            <MeetingModal
+              isOpen={showModal}
+              onClose={() => setShowModal(false)}
+              title = {modalType === "join" ?  "Join Meeting" : "Start Meeting"}
+              isJoinMeeting = {modalType === "join"}
+            />
         </>
       ) : (
         <p> None </p>
