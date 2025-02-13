@@ -4,8 +4,9 @@ import { ReactNode, useEffect, useState } from "react";
 import { StreamVideoClient, StreamVideo } from "@stream-io/video-react-sdk";
 import { useUser } from "@clerk/nextjs";
 import LoaderUI from "../LoaderUI";
+import { streamTokenProvider } from "@/actions/stream.actions";
 
-const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
+const StreamClientProvider = ({ children }: { children: ReactNode }) => {
     const [streamVideoClient, setStreamVideoClient] = useState<StreamVideoClient>();
     const { user, isLoaded } = useUser();
 
@@ -34,4 +35,4 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
     )
 };
 
-export default StreamVideoProvider;
+export default StreamClientProvider;
