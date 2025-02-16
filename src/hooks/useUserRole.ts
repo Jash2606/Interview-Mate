@@ -1,7 +1,7 @@
 import { useUser } from '@clerk/nextjs';
 import { useQuery } from 'convex/react';
 import React, { useState } from 'react'
-import { api } from "../../../convex/_generated/api"
+import { api } from "../../convex/_generated/api"
 
 function useUserRole(){
     const { user } = useUser();

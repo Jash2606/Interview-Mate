@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import ActionCard from "../../../components/ActionCard";
 import { QUICK_ACTIONS } from "@/constants";
-import  useUserRole  from "../../../components/hooks/useUserRole";
-import  MeetingModal  from "../../../components/MeetingModal";
+import useUserRole from "../../../hooks/useUserRole";
+import MeetingModal from "../../../components/MeetingModal";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
@@ -13,9 +13,9 @@ import LoaderUI from "@/components/LoaderUI";
 export default function Home() {
   const router = useRouter();
 
-  const {isInterviewer, isCandidate , isLoading } = useUserRole();
-  const [showModal , setShowModal] = useState(false);
-  const [modalType , setModalType] = useState<"start" | "join">();
+  const { isInterviewer, isCandidate, isLoading } = useUserRole();
+  const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState<"start" | "join">();
   const interviews = useQuery(api.interviews.getMyInterviews);
 
   const handleQuickAction = (title: string) => {
@@ -29,12 +29,12 @@ export default function Home() {
         setShowModal(true);
         break;
       default:
-        router.push(`/${title.toLowerCase()}`)
+        router.push(`/${title.toLowerCase()}`);
     }
-  }
+  };
 
-  if(isLoading) {
-    return <LoaderUI />
+  if (isLoading) {
+    return <LoaderUI />;
   }
 
   return (
@@ -60,15 +60,14 @@ export default function Home() {
                 action={action}
                 onClick={() => handleQuickAction(action.title)}
               />
-
             ))}
           </div>
-            <MeetingModal
-              isOpen={showModal}
-              onClose={() => setShowModal(false)}
-              title = {modalType === "join" ?  "Join Meeting" : "Start Meeting"}
-              isJoinMeeting = {modalType === "join"}
-            />
+          <MeetingModal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            title={modalType === "join" ? "Join Meeting" : "Start Meeting"}
+            isJoinMeeting={modalType === "join"}
+          />
         </>
       ) : (
         <p> None </p>
