@@ -1,5 +1,6 @@
-"use client "
+"use client"
 import LoaderUI from '@/components/LoaderUI';
+import MeetinSetup from '@/components/MeetinSetup';
 import useGetCallById from '@/hooks/useGetCallById';
 import { useUser } from '@clerk/nextjs';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
@@ -26,7 +27,7 @@ function MeetingPage() {
     <StreamCall call={call}>
       <StreamTheme>
           {!isSetupComplete ? (
-              <MeetingSetup onSetupComplete={()=>setIsSetupComplete(true)}/>
+              <MeetinSetup onSetupComplete={()=>setIsSetupComplete(true)}/>
           ):(
               <MeetingRoom/>
           )}

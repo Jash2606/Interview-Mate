@@ -10,8 +10,7 @@ const useGetCallById = (id: string | string[]) => {
         if(!client) return;
         const getCall = async()=>{
             try{
-                const { calls } = await client.queryCalls( filter_conditions: { id });\
-                
+                const { calls } = await client.queryCalls({ filter_conditions: { id } });                
                 if( calls.length>0 ){
                     setCall(calls[0]);
                 }
