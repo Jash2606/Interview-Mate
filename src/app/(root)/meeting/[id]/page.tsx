@@ -1,5 +1,6 @@
 "use client"
 import LoaderUI from '@/components/LoaderUI';
+import MeetingRoom from '@/components/MeetingRoom';
 import MeetinSetup from '@/components/MeetinSetup';
 import useGetCallById from '@/hooks/useGetCallById';
 import { useUser } from '@clerk/nextjs';
