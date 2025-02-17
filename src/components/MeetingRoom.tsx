@@ -18,6 +18,7 @@ import {
   } from "./ui/dropdown-menu";
   import { Button } from "./ui/button";
 import EndCallButton from "./EndCallButton";
+import CodeEditor from "./CodeEditor";
   
   function MeetingRoom() {
     const router = useRouter();
@@ -97,6 +98,7 @@ import EndCallButton from "./EndCallButton";
           <ResizablePanel defaultSize={65} minSize={25}>
             {/* Code Editor Gose Here */}
             <p> Code Editor Will Go Here</p>
+            <CodeEditor />
           </ResizablePanel>
         </ResizablePanelGroup>
       </div>
