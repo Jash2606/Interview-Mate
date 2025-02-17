@@ -17,6 +17,7 @@ import {
     DropdownMenuTrigger,
   } from "./ui/dropdown-menu";
   import { Button } from "./ui/button";
+import EndCallButton from "./EndCallButton";
   
   function MeetingRoom() {
     const router = useRouter();
@@ -84,7 +85,7 @@ import {
                     </Button>
   
                      {/* Here End Button Will Come */}
-                     <p> End Button </p>
+                     <EndCallButton/>
                   </div>
                 </div>
               </div>
