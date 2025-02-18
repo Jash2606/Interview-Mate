@@ -97,7 +97,6 @@ import CodeEditor from "./CodeEditor";
   
           <ResizablePanel defaultSize={65} minSize={25}>
             {/* Code Editor Gose Here */}
-            <p> Code Editor Will Go Here</p>
             <CodeEditor />
           </ResizablePanel>
         </ResizablePanelGroup>
