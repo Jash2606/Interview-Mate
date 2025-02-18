@@ -295,9 +295,9 @@ function InterviewScheduleUI() {
       ) : interviews.length > 0 ? (
         <div className="spacey-4">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* {interviews.map((interview) => (
+            {interviews.map((interview) => (
               <MeetingCard  key={interview._id} interview={interview} />
-            ))} */}
+            ))}
           </div>
         </div>
       ) : (
