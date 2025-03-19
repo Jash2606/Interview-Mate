@@ -7,6 +7,7 @@ import { Switch } from "./ui/switch";
 function MeetingSetup({onSetupComplete}:{onSetupComplete:()=>void}) {
     const[isCameraDisabled,setIsCameraDisabled] = useState(true);
     const[isMicDisabled,setIsMicDisabled] = useState(false);
+    const [hasJoined, setHasJoined] = useState(false)
     
     const call = useCall();
     if(!call) return null
@@ -28,8 +29,17 @@ function MeetingSetup({onSetupComplete}:{onSetupComplete:()=>void}) {
     },[isCameraDisabled,call.camera]);
 
     const handleJoin = async()=>{
-        await call.join()
-        onSetupComplete()
+        if (hasJoined) return;
+        setHasJoined(true);
+    
+        try {
+          await call.join();
+          onSetupComplete();
+        } catch (error) {
+          console.error(error);
+          // Reset guard flag if join fails, so user can try again
+          setHasJoined(false);
+        }
     }
 
     return (
